@@ -50,11 +50,17 @@ noakhaliDonateButton.addEventListener("click", function (e) {
     remainingBalance.innerText = balance.toFixed(2);
     // console.log(formattedDate);
     let newHistoryCard = document.createElement("div");
-    newHistoryCard.classList.add("p-8", "rounded-2xl", "mb-8", "border-[1px]");
-    newHistoryCard.innerHTML = `<h3 class="font-bold text-xl text-[#111111] mb-4">
+    newHistoryCard.classList.add(
+      "lg:p-8",
+      "rounded-2xl",
+      "mb-8",
+      "border-[1px]",
+      "p-4"
+    );
+    newHistoryCard.innerHTML = `<h3 class="lg:font-bold lg:text-xl font-semibold text-lg  text-[#111111] mb-4">
             ${noakhaliDonateAmount} Taka is Donated for ${noakhaliTitle}
           </h3>
-          <p class="text-[#111111B3] font-light text-base">
+          <p class="text-[#111111B3] font-light lg:text-base text-sm bg-slate-50 rounded-md px-2">
             Date : ${formattedDate}
           </p>`;
     history.appendChild(newHistoryCard);
@@ -89,11 +95,17 @@ feniDonateButton.addEventListener("click", function (e) {
     ).toFixed(2);
     remainingBalance.innerText = balance.toFixed(2);
     let newHistoryCard = document.createElement("div");
-    newHistoryCard.classList.add("p-8", "rounded-2xl", "mb-8", "border-[1px]");
+    newHistoryCard.classList.add(
+      "lg:p-8",
+      "rounded-2xl",
+      "mb-8",
+      "border-[1px]",
+      "p-4"
+    );
     newHistoryCard.innerHTML = `<h3 class="font-bold text-xl text-[#111111] mb-4">
             ${feniDonateAmount} Taka is Donated for ${feniTitle}
           </h3>
-          <p class="text-[#111111B3] font-light text-base">
+          <p class="text-[#111111B3] font-light text-base bg-slate-50 rounded-md px-2">
             Date : ${formattedDate}
           </p>`;
     history.appendChild(newHistoryCard);
@@ -128,11 +140,17 @@ quotaDonateButton.addEventListener("click", function (e) {
     ).toFixed(2);
     remainingBalance.innerText = balance.toFixed(2);
     let newHistoryCard = document.createElement("div");
-    newHistoryCard.classList.add("p-8", "rounded-2xl", "mb-8", "border-[1px]");
+    newHistoryCard.classList.add(
+      "lg:p-8",
+      "rounded-2xl",
+      "mb-8",
+      "border-[1px]",
+      "p-4"
+    );
     newHistoryCard.innerHTML = `<h3 class="font-bold text-xl text-[#111111] mb-4">
             ${quotaDonateAmount} Taka is Donated for ${quotaTitle}
           </h3>
-          <p class="text-[#111111B3] font-light text-base">
+          <p class="text-[#111111B3] font-light text-base bg-slate-50 rounded-md px-2">
             Date : ${formattedDate}
           </p>`;
     history.appendChild(newHistoryCard);

@@ -57,44 +57,65 @@
         </div>
       </nav>
     </header>
-    <main class="px-[138px] flex flex-col gap-4 mt-4">
+    <main class="px-[138px] flex flex-col gap-4 mt-12 mb-5">
       <h2 class="font-extrabold text-3xl">Important FAQ</h2>
       <div class="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" checked="checked" />
-        <div class="collapse-title text-xl font-medium">
+        <div class="collapse-title text-2xl font-medium">
           What is the Document Object Model (DOM)?
         </div>
         <div class="collapse-content">
-          <p>hello</p>
+          <p class="text-slate-500">
+            The Document Object Model (DOM) is a way for programs to interact
+            with web pages. It represents the structure of a webpage as a tree
+            of objects, where each element is a node. This allows developers to
+            access, modify, and delete content dynamically, making web pages
+            interactive and responsive.
+          </p>
         </div>
       </div>
       <div class="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
-        <div class="collapse-title text-xl font-medium">
+        <div class="collapse-title text-2xl font-medium">
           How do you select an element from the DOM?
         </div>
         <div class="collapse-content">
-          <p>hello</p>
+          <p class="text-slate-500">
+            We can use getElementByTagName, getElementById,
+            getElementsByClassName, querySelector, querySelectorAll methods to
+            select an element from DOM.
+          </p>
         </div>
       </div>
       <div class="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
-        <div class="collapse-title text-xl font-medium">
+        <div class="collapse-title text-2xl font-medium">
           What is event delegation in the context of the DOM, and why is it
           useful?
         </div>
         <div class="collapse-content">
-          <p>hello</p>
+          <p class="text-slate-500">
+            Event delegation is a technique where a single event listener is
+            added to a parent element instead of individual child elements. When
+            an event occurs on a child, it bubbles up to the parent. This allows
+            for dynamic handling of new child elements added later.
+          </p>
         </div>
       </div>
       <div class="collapse collapse-plus bg-base-200">
         <input type="radio" name="my-accordion-3" />
-        <div class="collapse-title text-xl font-medium">
+        <div class="collapse-title text-2xl font-medium">
           How do you manipulate an element's attributes and styles using the
           DOM?
         </div>
         <div class="collapse-content">
-          <p>hello</p>
+          <p class="text-slate-500">
+            You can manipulate an element's attributes and styles using the DOM
+            by selecting the element and then using properties and methods. To
+            change attributes, use element.setAttribute("attrName", "value").
+            For styles, use element.style.propertyName = "value". This allows
+            you to update how elements appear and behave dynamically.
+          </p>
         </div>
       </div>
     </main>
