@@ -1,3 +1,5 @@
+// common functionS
+
 function fetchData(idName) {
   let data = document.getElementById(idName).value;
   if (isNaN(data)) {
@@ -16,9 +18,10 @@ let remainingBalance = document.getElementById("remaining-balance");
 let donate = document.getElementById("donate");
 let history = document.getElementById("history");
 let noakhaliTitle = document.getElementById("noakhali-title").innerText;
-let feniTitle = document.getElementById("feni-title");
-let quotaTitle = document.getElementById("quota-title");
+let feniTitle = document.getElementById("feni-title").innerText;
+let quotaTitle = document.getElementById("quota-title").innerText;
 let modal = document.getElementById("my_modal");
+// localStorage.setItem("savedRemainingBalance", remainingBalance.innerText);
 
 // *************************************************** noakhali **************************************************//
 // noakhali balance
@@ -55,6 +58,7 @@ noakhaliDonateButton.addEventListener("click", function (e) {
             Date : ${formattedDate}
           </p>`;
     history.appendChild(newHistoryCard);
+    localStorage.setItem("savedRemainingBalance", remainingBalance.innerText);
     modal.showModal();
   }
 });
@@ -93,6 +97,7 @@ feniDonateButton.addEventListener("click", function (e) {
             Date : ${formattedDate}
           </p>`;
     history.appendChild(newHistoryCard);
+    localStorage.setItem("savedRemainingBalance", remainingBalance.innerText);
     modal.showModal();
   }
 });
@@ -131,6 +136,7 @@ quotaDonateButton.addEventListener("click", function (e) {
             Date : ${formattedDate}
           </p>`;
     history.appendChild(newHistoryCard);
+    localStorage.setItem("savedRemainingBalance", remainingBalance.innerText);
     modal.showModal();
   }
 });
