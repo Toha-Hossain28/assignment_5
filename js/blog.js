@@ -8,9 +8,10 @@ if (remainingBalanceFromIndex !== null) {
     2
   );
 } else {
-  console.error("No balance stored in localStorage");
+  // console.error("No balance stored in localStorage");
 }
 
 homeBtn.addEventListener("click", function (e) {
+  localStorage.removeItem("savedRemainingBalance");
   window.location.href = "./index.html";
 });
