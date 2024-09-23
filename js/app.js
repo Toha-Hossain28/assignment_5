@@ -26,7 +26,7 @@ noakhaliDonateButton.addEventListener("click", function (e) {
     return;
   } else if (
     parseFloat(remainingBalance.innerText) < noakhaliDonateAmount ||
-    noakhaliDonateAmount < 0
+    noakhaliDonateAmount <= 0
   ) {
     alert("Invalid data input");
     return;
@@ -36,7 +36,7 @@ noakhaliDonateButton.addEventListener("click", function (e) {
     noakhaliBalance.innerText = (
       parseFloat(noakhaliBalance.innerText) + noakhaliDonateAmount
     ).toFixed(2);
-    remainingBalance.innerText = balance;
+    remainingBalance.innerText = balance.toFixed(2);
   }
 });
 
@@ -52,7 +52,7 @@ feniDonateButton.addEventListener("click", function (e) {
     return;
   } else if (
     parseFloat(remainingBalance.innerText) < feniDonateAmount ||
-    feniDonateAmount < 0
+    feniDonateAmount <= 0
   ) {
     alert("Invalid data input");
     return;
@@ -62,7 +62,7 @@ feniDonateButton.addEventListener("click", function (e) {
     feniBalance.innerText = (
       parseFloat(feniBalance.innerText) + feniDonateAmount
     ).toFixed(2);
-    remainingBalance.innerText = balance;
+    remainingBalance.innerText = balance.toFixed(2);
   }
 });
 
@@ -72,7 +72,7 @@ let quotaBalance = document.getElementById("quota-balance");
 // quota donate button
 let quotaDonateButton = document.getElementById("quota-donate-button");
 
-feniDonateButton.addEventListener("click", function (e) {
+quotaDonateButton.addEventListener("click", function (e) {
   let quotaDonateAmount = fetchData("quota-donate-amount");
   if (quotaDonateAmount === null) {
     return;
@@ -88,21 +88,28 @@ feniDonateButton.addEventListener("click", function (e) {
     quotaBalance.innerText = (
       parseFloat(quotaBalance.innerText) + quotaDonateAmount
     ).toFixed(2);
-    remainingBalance.innerText = balance;
+    remainingBalance.innerText = balance.toFixed(2);
   }
 });
 
 // *********************************************************** banner btn **********************************************//
+let donate = document.getElementById("donate");
+let history = document.getElementById("history");
+
 let donationBtn = document.getElementById("donation-btn");
 let historyBtn = document.getElementById("history-btn");
 historyBtn.addEventListener("click", function (e) {
   historyBtn.classList.add("bg-[#B4F461]");
   donationBtn.classList.remove("bg-[#B4F461]");
+  donate.classList.add("hidden");
+  history.classList.remove("hidden");
 });
 
 donationBtn.addEventListener("click", function (e) {
   donationBtn.classList.add("bg-[#B4F461]");
   historyBtn.classList.remove("bg-[#B4F461]");
+  history.classList.add("hidden");
+  donate.classList.remove("hidden");
 });
 
 // ************************************************************* blog ***************************************************//
@@ -110,3 +117,5 @@ let blogBtn = document.getElementById("blog-btn");
 blogBtn.addEventListener("click", function () {
   window.location.href = "./blog.html";
 });
+
+// ************************************************************** history update *****************************************//
