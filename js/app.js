@@ -13,6 +13,11 @@ function innerTextToNumber(idName) {
 
 // account balance
 let remainingBalance = document.getElementById("remaining-balance");
+let donate = document.getElementById("donate");
+let history = document.getElementById("history");
+let noakhaliTitle = document.getElementById("noakhali-title").innerText;
+let feniTitle = document.getElementById("feni-title");
+let quotaTitle = document.getElementById("quota-title");
 
 // *************************************************** noakhali **************************************************//
 // noakhali balance
@@ -21,6 +26,8 @@ let noakhaliBalance = document.getElementById("noakhali-balance");
 let noakhaliDonateButton = document.getElementById("noakhali-donate-button");
 
 noakhaliDonateButton.addEventListener("click", function (e) {
+  const currentTime = new Date();
+  const formattedDate = currentTime.toString();
   let noakhaliDonateAmount = fetchData("noakhali-donate-amount");
   if (noakhaliDonateAmount === null) {
     return;
@@ -37,6 +44,16 @@ noakhaliDonateButton.addEventListener("click", function (e) {
       parseFloat(noakhaliBalance.innerText) + noakhaliDonateAmount
     ).toFixed(2);
     remainingBalance.innerText = balance.toFixed(2);
+    // console.log(formattedDate);
+    let newHistoryCard = document.createElement("div");
+    newHistoryCard.classList.add("p-8", "rounded-2xl", "mb-8", "border-[1px]");
+    newHistoryCard.innerHTML = `<h3 class="font-bold text-xl text-[#111111] mb-4">
+            ${noakhaliDonateAmount} Taka is Donated for ${noakhaliTitle}
+          </h3>
+          <p class="text-[#111111B3] font-light text-base">
+            Date : ${formattedDate}
+          </p>`;
+    history.appendChild(newHistoryCard);
   }
 });
 
@@ -47,6 +64,8 @@ let feniBalance = document.getElementById("feni-balance");
 let feniDonateButton = document.getElementById("feni-donate-button");
 
 feniDonateButton.addEventListener("click", function (e) {
+  const currentTime = new Date();
+  const formattedDate = currentTime.toString();
   let feniDonateAmount = fetchData("feni-donate-amount");
   if (feniDonateAmount === null) {
     return;
@@ -63,6 +82,15 @@ feniDonateButton.addEventListener("click", function (e) {
       parseFloat(feniBalance.innerText) + feniDonateAmount
     ).toFixed(2);
     remainingBalance.innerText = balance.toFixed(2);
+    let newHistoryCard = document.createElement("div");
+    newHistoryCard.classList.add("p-8", "rounded-2xl", "mb-8", "border-[1px]");
+    newHistoryCard.innerHTML = `<h3 class="font-bold text-xl text-[#111111] mb-4">
+            ${feniDonateAmount} Taka is Donated for ${feniTitle}
+          </h3>
+          <p class="text-[#111111B3] font-light text-base">
+            Date : ${formattedDate}
+          </p>`;
+    history.appendChild(newHistoryCard);
   }
 });
 
@@ -73,6 +101,8 @@ let quotaBalance = document.getElementById("quota-balance");
 let quotaDonateButton = document.getElementById("quota-donate-button");
 
 quotaDonateButton.addEventListener("click", function (e) {
+  const currentTime = new Date();
+  const formattedDate = currentTime.toString();
   let quotaDonateAmount = fetchData("quota-donate-amount");
   if (quotaDonateAmount === null) {
     return;
@@ -89,12 +119,19 @@ quotaDonateButton.addEventListener("click", function (e) {
       parseFloat(quotaBalance.innerText) + quotaDonateAmount
     ).toFixed(2);
     remainingBalance.innerText = balance.toFixed(2);
+    let newHistoryCard = document.createElement("div");
+    newHistoryCard.classList.add("p-8", "rounded-2xl", "mb-8", "border-[1px]");
+    newHistoryCard.innerHTML = `<h3 class="font-bold text-xl text-[#111111] mb-4">
+            ${quotaDonateAmount} Taka is Donated for ${quotaTitle}
+          </h3>
+          <p class="text-[#111111B3] font-light text-base">
+            Date : ${formattedDate}
+          </p>`;
+    history.appendChild(newHistoryCard);
   }
 });
 
 // *********************************************************** banner btn **********************************************//
-let donate = document.getElementById("donate");
-let history = document.getElementById("history");
 
 let donationBtn = document.getElementById("donation-btn");
 let historyBtn = document.getElementById("history-btn");
@@ -119,3 +156,10 @@ blogBtn.addEventListener("click", function () {
 });
 
 // ************************************************************** history update *****************************************//
+let historyStructure = `<h3 class="font-bold text-xl text-[#111111] mb-4">
+            ${amount} Taka is Donated for ${eventName}
+          </h3>
+          <p class="text-[#111111B3] font-light text-base">
+            Date:${formattedDate}
+          </p>
+        `;
