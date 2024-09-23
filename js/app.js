@@ -18,6 +18,7 @@ let history = document.getElementById("history");
 let noakhaliTitle = document.getElementById("noakhali-title").innerText;
 let feniTitle = document.getElementById("feni-title");
 let quotaTitle = document.getElementById("quota-title");
+let modal = document.getElementById("my_modal");
 
 // *************************************************** noakhali **************************************************//
 // noakhali balance
@@ -54,6 +55,7 @@ noakhaliDonateButton.addEventListener("click", function (e) {
             Date : ${formattedDate}
           </p>`;
     history.appendChild(newHistoryCard);
+    modal.showModal();
   }
 });
 
@@ -91,6 +93,7 @@ feniDonateButton.addEventListener("click", function (e) {
             Date : ${formattedDate}
           </p>`;
     history.appendChild(newHistoryCard);
+    modal.showModal();
   }
 });
 
@@ -128,6 +131,7 @@ quotaDonateButton.addEventListener("click", function (e) {
             Date : ${formattedDate}
           </p>`;
     history.appendChild(newHistoryCard);
+    modal.showModal();
   }
 });
 
@@ -156,10 +160,10 @@ blogBtn.addEventListener("click", function () {
 });
 
 // ************************************************************** history update *****************************************//
-let historyStructure = `<h3 class="font-bold text-xl text-[#111111] mb-4">
-            ${amount} Taka is Donated for ${eventName}
-          </h3>
-          <p class="text-[#111111B3] font-light text-base">
-            Date:${formattedDate}
-          </p>
-        `;
+// let historyStructure = `<h3 class="font-bold text-xl text-[#111111] mb-4">
+//             ${amount} Taka is Donated for ${eventName}
+//           </h3>
+//           <p class="text-[#111111B3] font-light text-base">
+//             Date:${formattedDate}
+//           </p>
+//         `;
