@@ -2,7 +2,7 @@
 
 function fetchData(idName) {
   let data = document.getElementById(idName).value;
-  if (isNaN(data)) {
+  if (isNaN(data) || data === "") {
     alert("Invalid Input Data!");
     return null;
   }
