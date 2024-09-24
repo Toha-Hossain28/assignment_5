@@ -191,3 +191,15 @@ blogBtn.addEventListener("click", function () {
 //             Date:${formattedDate}
 //           </p>
 //         `;
+// *******************************************************************************
+let header = document.getElementsByTagName("nav")[0]; // Access the first nav element
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 0) {
+    header.classList.add("bg-opacity-80", "backdrop-blur-2xl");
+    // header.classList.remove("bg-[#F9F7F3]");
+  } else {
+    header.classList.remove("bg-opacity-80", "backdrop-blur-2xl");
+    // header.classList.add("bg-[#F9F7F3]");
+  }
+});
